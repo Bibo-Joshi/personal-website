@@ -1,0 +1,93 @@
+body {
+    background-color: #000000;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#blob {
+    height: 20vmax;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    filter: blur(2vmax);
+    opacity: 0.7;
+    animation: rotate 20s linear infinite;
+    background-size: 400% 400%;
+    background-position: 0% 0%;
+}
+
+@keyframes rotate {
+    from { rotate: 0deg; }
+    to { rotate: 360deg; }
+}
+
+#blur {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    backdrop-filter: blur(8vmax);
+}
+
+#content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#logo-container {
+    margin-bottom: 5rem;
+}
+
+#logo {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+#contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.icon-link {
+    color: black;
+    font-size: 2rem;
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+    transition: text-shadow 0.3s ease;
+}
+
+.icon-link i {
+    width: 1em;
+    text-align: center;
+}
+
+.icon-link:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    #logo {
+        max-width: 90%;
+    }
+
+    #contact-icons {
+        flex-direction: column;
+    }
+}
