@@ -142,4 +142,15 @@ window.onpointermove = event => {
     curveProgress = 0;
 };
 
+function handleTouchEvent(event) {
+    targetX = event.touches[0].clientX;
+    targetY = event.touches[0].clientY;
+    idleTime = 0;
+    isRandomMotion = false;
+    curveProgress = 0;
+}
+
+window.addEventListener('touchmove', handleTouchEvent, { passive: false });
+window.addEventListener('touched', handleTouchEvent, { passive: false });
+
 requestAnimationFrame(updateBlobPosition);
